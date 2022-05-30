@@ -28,12 +28,12 @@ import {
   Employees,
 } from "./pages";
 
-import { useStatecontext } from "./contexts/ContextProvider";
+import { useStateContext } from "./contexts/ContextProvider";
 
 import "./App.css";
 
 const App = () => {
-  const { activeMenu } = useStatecontext();
+  const { activeMenu } = useStateContext();
 
   return (
     <div>
