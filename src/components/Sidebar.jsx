@@ -5,10 +5,10 @@ import { MdOutlineCancel } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { links } from "../data/dummyData";
-import { useStatecontext } from "./contexts/ContextProvider";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu } = useStatecontext();
+  const { activeMenu, setActiveMenu } = useStateContext();
 
   const activeLink =
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2";
@@ -34,7 +34,7 @@ const Sidebar = () => {
                 onClick={() => {
                   setActiveMenu((prevActiveMenu) => !prevActiveMenu);
                 }}
-                className="text-xl rounded-full p-3  hover:bg-light-gray mt-4 block "
+                className="text-xl rounded-full p-3  hover:bg-light-gray mt-4 block  "
                 // md:hidden
               >
                 <MdOutlineCancel />
