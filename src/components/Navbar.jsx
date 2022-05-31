@@ -28,7 +28,8 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick } =
+    useStateContext();
 
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
@@ -42,27 +43,27 @@ const Navbar = () => {
         <NavButton
           title="Notification"
           // dotColor="#8CFFE9"
-          // customFunc={() => handleClick("notification")}
+          customFunc={() => handleClick("notification")}
           color="#3EBDFF"
           icon={<RiNotification2Line />}
         />
         <NavButton
           title="Chat"
           // dotColor="#3EBDFF"
-          // customFunc={() => handleClick("chat")}
+          customFunc={() => handleClick("chat")}
           color="#3EBDFF"
           icon={<BsChatSquare />}
         />
         <NavButton
           title="Cart"
-          // customFunc={() => handleClick("cart")}
+          customFunc={() => handleClick("cart")}
           color="#3EBDFF"
           icon={<FiShoppingCart />}
         />
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-            // onClick={() => handleClick("userProfile")}
+            onClick={() => handleClick("userProfile")}
           >
             <img src={avatar} className="rounded-full w-8 h-8" />
             <p>
@@ -77,6 +78,10 @@ const Navbar = () => {
             />
           </div>
         </TooltipComponent>
+        {isClicked.cart && <Cart />}
+        {isClicked.chat && <Chat />}
+        {isClicked.notification && <Notification />}
+        {isClicked.userProfile && <UserProfile />}
       </div>
     </div>
   );
