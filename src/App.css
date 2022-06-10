@@ -53,3 +53,41 @@
 .e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left) {
   border: none;
 }
+
+@-webkit-keyframes stop-and-go {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  60% {
+    -webkit-transform: rotate(1440deg);
+    transform: rotate(1440deg);
+  }
+  100% {
+    -webkit-transform: rotate(1080deg);
+    transform: rotate(1080deg);
+  }
+}
+@keyframes stop-and-go {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  60% {
+    -webkit-transform: rotate(1440deg);
+    transform: rotate(1440deg);
+  }
+  100% {
+    -webkit-transform: rotate(1080deg);
+    transform: rotate(1080deg);
+  }
+}
+
+#stop-and-go {
+  -webkit-animation: stop-and-go 13s infinite;
+  animation: stop-and-go 13s infinite;
+}
+#stop-and-go:hover {
+  -webkit-animation: stop-and-go 2s infinite;
+  animation: stop-and-go 2s infinite;
+}
