@@ -5,12 +5,12 @@ import {
   // Stacked,
   //  Pie,
   Button,
-  //  SparkLine
+  SparkLine,
 } from "../components";
 // import { useStateContext } from "../contexts/ContextProvider";
 import {
   earningData,
-  // SparklineAreaData,
+  SparklineAreaData,
   // ecomPieChartData,
 } from "../data/dummyData";
 
@@ -50,6 +50,8 @@ const Ecommerce = () => {
               </button>
               <p className="mt-3">
                 <span className="text-lg font-semibold">{item.amount}</span>
+
+                {/* Tailwind bug in text-color in next line */}
                 <span className={`text-sm text-${item.pcColor} ml-2`}>
                   {item.percentage}
                 </span>
@@ -94,6 +96,17 @@ const Ecommerce = () => {
                   <span className="text-3xl font-semibold">$53,705</span>
                 </p>
                 <p className="text-gray-500 mt-1">Expense</p>
+              </div>
+              <div className="mt-5">
+                <SparkLine
+                  currentColor="blue"
+                  id="line-sparkline"
+                  type="Line"
+                  height="80px"
+                  width="250px"
+                  data={SparklineAreaData}
+                  color="blue"
+                />
               </div>
             </div>
           </div>
