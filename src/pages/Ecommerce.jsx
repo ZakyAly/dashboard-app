@@ -2,7 +2,7 @@ import React from "react";
 // import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import {
-  // Stacked,
+  Stacked,
   //  Pie,
   Button,
   SparkLine,
@@ -116,6 +116,9 @@ const Ecommerce = () => {
                   borderRadius="10px"
                 />
               </div>
+            </div>
+            <div>
+              <Stacked width="320px" height="360" />
             </div>
           </div>
         </div>
