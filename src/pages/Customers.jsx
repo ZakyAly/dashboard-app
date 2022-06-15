@@ -22,15 +22,22 @@ const Customers = () => {
         dataSource={customersData}
         allowPaging
         allowSorting
-        toolbar={["Search"]}
+        toolbar={["Search", "Add", "Edit", "Delete"]}
         width="auto"
+        editSettings={{
+          allowEditing: true,
+          allowAdding: true,
+          allowDeleting: true,
+        }}
       >
         <ColumnsDirective>
           {customersGrid.map((item, index) => (
             <ColumnDirective key={index} {...item} />
           ))}
         </ColumnsDirective>
-        <Inject services={[Page, Filter, Edit, Sort, Search, Toolbar]} />
+        <Inject
+          services={[Page, Filter, Edit, Sort, Search, Toolbar, Selection]}
+        />
       </GridComponent>
     </div>
   );
