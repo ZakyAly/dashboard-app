@@ -7,7 +7,7 @@ import {
   Navbar,
   Sidebar,
   // Footer,
-  //  ThemeSettings
+  ThemeSettings,
 } from "./components";
 import {
   Calendar,
@@ -71,6 +71,7 @@ const App = () => {
             </div>
 
             <div>
+              <ThemeSettings />
               <Routes>
                 {/* Dashboard */}
                 {/* <Route path="/" element={<Ecommerce />} /> */}
