@@ -15,6 +15,12 @@ import { customersData, customersGrid } from "../data/dummyData";
 import { Header } from "../components";
 
 const Customers = () => {
+  const services = [Sort, Filter, Page, Edit, Search, Toolbar];
+  const editing = {
+    allowDeleting: true,
+    allowEditing: true,
+    allowAdding: true,
+  };
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
       <Header title="Customers" category="Page" />
@@ -24,20 +30,14 @@ const Customers = () => {
         allowSorting
         toolbar={["Search", "Add", "Edit", "Delete"]}
         width="auto"
-        editSettings={{
-          allowEditing: true,
-          allowAdding: true,
-          allowDeleting: true,
-        }}
+        editSettings={editing}
       >
         <ColumnsDirective>
           {customersGrid.map((item, index) => (
             <ColumnDirective key={index} {...item} />
           ))}
         </ColumnsDirective>
-        <Inject
-          services={[Page, Filter, Edit, Sort, Search, Toolbar, Selection]}
-        />
+        <Inject services={services} />
       </GridComponent>
     </div>
   );
