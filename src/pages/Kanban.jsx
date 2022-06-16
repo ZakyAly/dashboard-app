@@ -3,10 +3,9 @@ import {
   KanbanComponent,
   ColumnsDirective,
   ColumnDirective,
-  //   Inject,
 } from "@syncfusion/ej2-react-kanban";
 
-import { kanbanData } from "../data/dummyData";
+import { kanbanData, kanbanGrid } from "../data/dummyData";
 import { Header } from "../components";
 
 const Kanban = () => {
@@ -17,16 +16,13 @@ const Kanban = () => {
         id="kanban"
         keyField="Status"
         dataSource={kanbanData}
-        swimlaneSettings={{ keyField: "Assignee" }}
         cardSettings={{ contentField: "Summary", headerField: "Id" }}
       >
         <ColumnsDirective>
-          <ColumnDirective headerText="To Do" keyField="Open" />
-          <ColumnDirective headerText="In Progress" keyField="InProgress" />
-          <ColumnDirective headerText="Testing" keyField="Testing" />
-          <ColumnDirective headerText="Done" keyField="Close" />
+          {kanbanGrid.map((item, index) => (
+            <ColumnDirective key={index} {...item} />
+          ))}
         </ColumnsDirective>
-        {/* <Inject services={[]} /> */}
       </KanbanComponent>
     </div>
   );
