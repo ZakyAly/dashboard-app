@@ -26,6 +26,7 @@ const ThemeSettings = () => {
         </div>
         <div className="flex-col border-t-1 border-color ml-4 p-4">
           <p className="font-semibold text-lg">Themes</p>
+          <p className="text-sm text-gray-500">Select your theme!</p>
           <div className="mt-4">
             <input
               className="cursor-pointer"
@@ -53,6 +54,38 @@ const ThemeSettings = () => {
             <label className="ml-2 text-md cursor-pointer" htmlFor="dark">
               Dark
             </label>
+          </div>
+        </div>
+        <div className=" border-t-1 border-color ml-4 p-4">
+          <p className="font-semibold text-lg">Colors</p>
+          <p className="text-sm text-gray-500">Pick your color!</p>
+          <div className="flex gap-4 mt-3">
+            {themeColors.map((item, index) => (
+              <TooltipComponent
+                key={index}
+                content={item.name}
+                position="TopCenter"
+              >
+                <div
+                // className=" flex gap-5 items-center relative mt-2 cursor-pointer"
+                >
+                  <button
+                    className="h-10 w-10 cursor-pointer rounded-full"
+                    type="button"
+                    style={{
+                      backgroundColor: item.color,
+                    }}
+                    onClick={() => {}}
+                  >
+                    <BsCheck
+                      className={`ml-2 text-2xl text-white ${
+                        false ? "block" : "hidden"
+                      }`}
+                    />
+                  </button>
+                </div>
+              </TooltipComponent>
+            ))}
           </div>
         </div>
       </div>
