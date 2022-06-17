@@ -33,7 +33,7 @@ import { useStateContext } from "./contexts/ContextProvider";
 import "./App.css";
 
 const App = () => {
-  const { activeMenu } = useStateContext();
+  const { activeMenu, themeSettings } = useStateContext();
 
   return (
     <div>
@@ -71,7 +71,7 @@ const App = () => {
             </div>
 
             <div>
-              <ThemeSettings />
+              {themeSettings && <ThemeSettings />}
               <Routes>
                 {/* Dashboard */}
                 {/* <Route path="/" element={<Ecommerce />} /> */}
