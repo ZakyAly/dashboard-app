@@ -33,7 +33,7 @@ import { useStateContext } from "./contexts/ContextProvider";
 import "./App.css";
 
 const App = () => {
-  const { activeMenu, themeSettings } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings } = useStateContext();
 
   return (
     <div>
@@ -47,6 +47,9 @@ const App = () => {
                 // style={{ background: "#FEE2E2" }}
                 style={{ backgroundColor: "#3DBDFF" }}
                 id="stop-and-go"
+                onClick={() => {
+                  setThemeSettings(true);
+                }}
               >
                 <FiSettings />
               </button>
