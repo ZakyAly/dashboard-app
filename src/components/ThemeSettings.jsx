@@ -29,7 +29,7 @@ const ThemeSettings = () => {
         </div>
         <div className="flex-col border-t-1 border-color ml-4 p-4">
           <p className="font-semibold text-lg">Themes</p>
-          <p className="text-sm text-gray-500">Select your theme!</p>
+          <p className="text-sm text-gray-500">Select your theme</p>
           <div className="mt-4">
             <input
               className="cursor-pointer"
@@ -37,8 +37,8 @@ const ThemeSettings = () => {
               id="light"
               name="theme"
               value="Light"
-              onChange={() => {}}
-              checked={true}
+              checked={currentMode === "Light"}
+              onChange={setMode}
             />
             <label className="ml-2 text-md cursor-pointer" htmlFor="light">
               Light
@@ -51,8 +51,8 @@ const ThemeSettings = () => {
               id="dark"
               name="theme"
               value="Dark"
-              onChange={() => {}}
-              checked={true}
+              checked={currentMode === "Dark"}
+              onChange={setMode}
             />
             <label className="ml-2 text-md cursor-pointer" htmlFor="dark">
               Dark
@@ -78,11 +78,11 @@ const ThemeSettings = () => {
                     style={{
                       backgroundColor: item.color,
                     }}
-                    onClick={() => {}}
+                    onClick={() => setColor(item.color)}
                   >
                     <BsCheck
                       className={`ml-2 text-2xl text-white ${
-                        false ? "block" : "hidden"
+                        item.color === currentColor ? "block" : "hidden"
                       }`}
                     />
                   </button>
