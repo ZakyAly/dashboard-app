@@ -83,11 +83,11 @@
   }
 }
 
-#stop-and-go {
+#spin {
   -webkit-animation: stop-and-go 13s infinite;
   animation: stop-and-go 13s infinite;
 }
-#stop-and-go:hover {
+#spin:hover {
   -webkit-animation: stop-and-go 2s infinite;
   animation: stop-and-go 2s infinite;
 }
