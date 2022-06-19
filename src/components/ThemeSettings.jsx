@@ -18,15 +18,13 @@ const ThemeSettings = () => {
           <button
             type="button"
             className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray rounded-full "
-            style={{
-              color: "rgb(153, 171, 180)",
-              //  borderRadius: "50%"
-            }}
+            style={{ color: "rgb(153, 171, 180)" }}
             onClick={() => setThemeSettings(false)}
           >
             <MdOutlineCancel />
           </button>
         </div>
+
         <div className="flex-col border-t-1 border-color ml-4 p-4">
           <p className="font-semibold text-lg">Themes</p>
           <p className="text-sm text-gray-500">Select your theme</p>
@@ -44,6 +42,7 @@ const ThemeSettings = () => {
               Light
             </label>
           </div>
+
           <div className="mt-4">
             <input
               className="cursor-pointer"
@@ -59,6 +58,7 @@ const ThemeSettings = () => {
             </label>
           </div>
         </div>
+
         <div className=" border-t-1 border-color ml-4 p-4">
           <p className="font-semibold text-lg">Colors</p>
           <p className="text-sm text-gray-500">Pick your color!</p>
@@ -69,9 +69,7 @@ const ThemeSettings = () => {
                 content={item.name}
                 position="TopCenter"
               >
-                <div
-                // className=" flex gap-5 items-center relative mt-2 cursor-pointer"
-                >
+                <div className=" flex gap-5 items-center relative mt-2 cursor-pointer">
                   <button
                     className="h-10 w-10 cursor-pointer rounded-full"
                     type="button"
