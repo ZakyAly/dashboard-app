@@ -2,7 +2,6 @@ import React from "react";
 import { MdOutlineCancel } from "react-icons/md";
 import { BsCheck } from "react-icons/bs";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-
 import { useStateContext } from "../contexts/ContextProvider";
 import { themeColors } from "../data/dummyData";
 
@@ -12,13 +11,13 @@ const ThemeSettings = () => {
 
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
-      <div className="float-right h-screen dark:text-gray-200 bg-white dark:[#484B52] w-400 ">
+      <div className="float-right h-screen dark:text-gray-200 bg-white dark:bg-secondary-dark-bg w-400 ">
         <div className="flex justify-between items-center p-4 ml-4">
           <p className="font-semibold text-xl">Settings</p>
           <button
             type="button"
-            className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray rounded-full "
-            style={{ color: "rgb(153, 171, 180)" }}
+            className="text-2xl p-1 hover:drop-shadow-xl  rounded-full "
+            style={{ backgroundColor: currentColor }}
             onClick={() => setThemeSettings(false)}
           >
             <MdOutlineCancel />
@@ -27,7 +26,7 @@ const ThemeSettings = () => {
 
         <div className="flex-col border-t-1 border-color ml-4 p-4">
           <p className="font-semibold text-lg">Themes</p>
-          <p className="text-sm text-gray-500">Select your theme</p>
+          <p className="text-sm text-gray-500">Select theme</p>
           <div className="mt-4">
             <input
               className="cursor-pointer"
@@ -61,7 +60,7 @@ const ThemeSettings = () => {
 
         <div className=" border-t-1 border-color ml-4 p-4">
           <p className="font-semibold text-lg">Colors</p>
-          <p className="text-sm text-gray-500">Pick your color!</p>
+          <p className="text-sm text-gray-500">Pick color</p>
           <div className="flex gap-4 mt-3">
             {themeColors.map((item, index) => (
               <TooltipComponent
@@ -69,7 +68,10 @@ const ThemeSettings = () => {
                 content={item.name}
                 position="TopCenter"
               >
-                <div className=" flex gap-5 items-center relative mt-2 cursor-pointer">
+                <div
+                  className=" flex gap-5 items-center relative mt-2 cursor-pointer"
+                  // key={item.name}
+                >
                   <button
                     className="h-10 w-10 cursor-pointer rounded-full"
                     type="button"
