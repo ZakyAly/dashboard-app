@@ -1,22 +1,10 @@
 import React from "react";
-// import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
-import {
-  Stacked,
-  //  Pie,
-  Button,
-  SparkLine,
-  Header,
-} from "../components";
+import { Stacked, Button, SparkLine, Header } from "../components";
 import { useStateContext } from "../contexts/ContextProvider";
-import {
-  earningData,
-  SparklineAreaData,
-  // ecomPieChartData,
-} from "../data/dummyData";
+import { earningData, SparklineAreaData } from "../data/dummyData";
 
 const Ecommerce = () => {
-  // eslint-disable-next-line
   const { currentColor, currentMode } = useStateContext();
 
   return (
@@ -59,8 +47,6 @@ const Ecommerce = () => {
                 </button>
                 <p className="mt-3">
                   <span className="text-lg font-semibold  ">{item.amount}</span>
-
-                  {/* Tailwind bug in text-color in next line */}
                   <span className={`text-sm text-${item.pcColor} ml-2`}>
                     {item.percentage}
                   </span>
@@ -127,7 +113,11 @@ const Ecommerce = () => {
                 </div>
               </div>
               <div>
-                <Stacked width="320px" height="360px" />
+                <Stacked
+                  currentMode={currentMode}
+                  width="320px"
+                  height="360px"
+                />
               </div>
             </div>
           </div>
