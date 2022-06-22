@@ -2,7 +2,7 @@
 
 ##### Visit [D-Dashboard-App](https://d-dashboard-app.netlify.app/)
 
-This is an advanced application displays a Dashboard, Pages, Apps and Charts.
+This is an advanced application that displays a Dashboard, Pages, Apps, and Charts.
 
 Accomplished by using:
 
@@ -26,36 +26,36 @@ Accomplished by using:
 
 - Ecommerce Dashboard:
 
-  - Gives you a fully dashboard to monitor the work updates.
+  - Gives you a full dashboard to monitor the work updates.
 
 - Pages:
 
-  - Orders, Customers, and Emplyees. All of these pages displaying the details of its own.
+  - Orders, Customers, and Employees. All of these pages display the details of their own.
 
 - Apps:
 
   - Calendar app: arranges your meetings.
   - Kanban app: arranges your tasks.
   - Editor app: edit your text styling.
-  - Color-Picker app: pick your colors with it's "Hex triplet".
+  - Color-Picker app: pick your colors with its "Hex triplet".
 
 - Charts:
-  - Choose your prefered chart to display the data:
+  - Choose your preferred chart to display the data:
     - Line, Bar, Pie ...etc.
 
 ### Setup:
 
 - You will need to setup `npm` or `yarn`.
-- Downlonad the project `git clone https://github.com/ZakyAly/dashboard-app`
+- Download the project `git clone https://github.com/ZakyAly/dashboard-app`
 - In the project directory, you can run `npm install` or `yarn install`.
-- Create `.env` file with your own API keys
 - Start the development mode by `npm start` or `yarn run`
 
 ### Known Bugs:
 
 - Colors:
-  - bug in "customers, products, sales and refunds" in /ecommerce. It should display green color when percentage increesed and red when percentage decreesed.
+  - bug in "customers, products, sales and refunds" in /ecommerce. It should display green color when percentage increases and red when the percentage decreases.
 
 ### ToDo:
 
-- Colmplete the notification, chat, cart and profile.
+- Complete the notification, chat, cart, and profile.
+- Refactoring some code.
